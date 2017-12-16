@@ -16,7 +16,8 @@ Route::get('/', function () {
 });
 
 Route::view('/input.html', 'input.index');
-Route::resource('inputs','InputController');
+Route::resource('inputs','InputController',['except' => [
+    'create', 'show', 'edit']]);
 /*Route::get('/url', function () {
     return Request::url();
 });*/

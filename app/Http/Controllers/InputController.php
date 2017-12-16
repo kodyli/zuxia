@@ -18,16 +18,6 @@ class InputController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -39,28 +29,6 @@ class InputController extends Controller
         $input->type = $request->type;
         $input->save();
         return $input;
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Input  $input
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Input $input)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Input  $input
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Input $input)
-    {
-        //
     }
 
     /**
