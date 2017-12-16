@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::view('/input.html', 'input.index');
+Route::resource('inputs','InputController');
+/*Route::get('/url', function () {
+    return Request::url();
+});*/
