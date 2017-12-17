@@ -7,5 +7,6 @@
 
 require('./bootstrap');
 require('./jquery/ajax');
+require('./jsGrid/customGrid');
 require('./jsGrid/customField');
 require('./jsGrid/customValidation');

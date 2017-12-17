@@ -55,4 +55,10 @@ class InputController extends Controller
     {
         $input->delete();
     }
+
+    public function dropDown(){
+        return Input::all()->map(function($input){
+            return ['id'=>$input->id,'type'=>$input->type];
+        });
+    }
 }

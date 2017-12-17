@@ -60,40 +60,19 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
-/******/ ({
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ 1:
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
+__webpack_require__(1);
+module.exports = __webpack_require__(12);
 
 
 /***/ }),
-
-/***/ 10:
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -103,18 +82,18 @@ module.exports = g;
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+__webpack_require__(2);
+__webpack_require__(9);
+__webpack_require__(24);
+__webpack_require__(10);
 __webpack_require__(11);
-__webpack_require__(56);
-__webpack_require__(54);
-__webpack_require__(55);
 
 /***/ }),
-
-/***/ 11:
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(12);
+window._ = __webpack_require__(3);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -123,10 +102,10 @@ window._ = __webpack_require__(12);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(14);
+  window.$ = window.jQuery = __webpack_require__(6);
 
-  __webpack_require__(15);
-  __webpack_require__(52);
+  __webpack_require__(7);
+  __webpack_require__(8);
 } catch (e) {}
 
 /**
@@ -174,8 +153,7 @@ if (token) {
 // });
 
 /***/ }),
-
-/***/ 12:
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -17264,11 +17242,37 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(13)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(5)(module)))
 
 /***/ }),
+/* 4 */
+/***/ (function(module, exports) {
 
-/***/ 13:
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -17296,8 +17300,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-
-/***/ 14:
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -27557,8 +27560,7 @@ return jQuery;
 
 
 /***/ }),
-
-/***/ 15:
+/* 7 */
 /***/ (function(module, exports) {
 
 /*!
@@ -29941,15 +29943,7 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-
-/***/ 42:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 52:
+/* 8 */
 /***/ (function(module, exports) {
 
 /*
@@ -32471,24 +32465,7 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-
-/***/ 54:
-/***/ (function(module, exports) {
-
-//jsGrid custom date column
-(function (jsGrid) {})(window.jsGrid);
-
-/***/ }),
-
-/***/ 55:
-/***/ (function(module, exports) {
-
-//jsGrid custom validation
-(function (jsGrid) {})(window.jsGrid);
-
-/***/ }),
-
-/***/ 56:
+/* 9 */
 /***/ (function(module, exports) {
 
 (function ($) {
@@ -32507,14 +32484,131 @@ if (typeof jQuery === 'undefined') {
 })(window.jQuery);
 
 /***/ }),
+/* 10 */
+/***/ (function(module, exports) {
 
-/***/ 9:
-/***/ (function(module, exports, __webpack_require__) {
+//jsGrid custom date column
+(function (jsGrid) {
+	function CheckboxField(config) {
+		jsGrid.CheckboxField.call(this, config);
+	}
+	CheckboxField.prototype = Object.create(jsGrid.CheckboxField.prototype);
+	CheckboxField.prototype.insertValue = function () {
+		return this.insertControl.is(":checked") ? 1 : 0;
+	};
+	CheckboxField.prototype.editValue = function () {
+		return this.insertControl.is(":checked") ? 1 : 0;
+	};
+	jsGrid.fields.checkbox = CheckboxField;
+})(window.jsGrid);
 
-__webpack_require__(10);
-module.exports = __webpack_require__(42);
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
 
+//jsGrid custom validation
+(function (jsGrid) {
+	function isCapitalized(value) {
+		return (/^\b(?:[A-Z]\w+\b(?:\s*)?)+$/.test(value)
+		);
+	}
+
+	jsGrid.validators.capitalize = {
+		message: "Please capitalize the first letter of each word.",
+		validator: function validator(value, item) {
+			return isCapitalized(value);
+		}
+	};
+})(window.jsGrid);
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */
+/***/ (function(module, exports) {
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+(function (jsGrid) {
+	jsGrid.toGridConfig = function (url, fields, config) {
+		var _config2;
+
+		fields.push({ type: "control" });
+		var _config = (_config2 = {
+			width: "100%",
+			height: "520",
+			paging: true,
+			pageSize: 10,
+			autoload: true,
+			inserting: true,
+			editing: true,
+			sorting: true
+		}, _defineProperty(_config2, "autoload", true), _defineProperty(_config2, "controller", {
+			loadData: function loadData(filter) {
+				var d = $.Deferred();
+				$.get({
+					url: url,
+					dataType: "json"
+				}).done(function (response) {
+					d.resolve(response);
+				});
+				return d.promise();
+			},
+			insertItem: function insertItem(item) {
+				$.post({
+					url: url,
+					data: item,
+					dataType: "json"
+				}).done(function (response) {
+					var keys = item.keys;
+					$.each(keys, function (index, value) {
+						item[value] = response[value];
+					});
+				});
+			},
+			updateItem: function updateItem(item) {
+				console.log(item);
+				$.put({
+					url: url + "/" + item.id,
+					data: item
+				}).done(function (response) {
+					var keys = item.keys;
+					$.each(keys, function (index, value) {
+						item[value] = response[value];
+					});
+					//item.type=response.type;
+				});
+			},
+			deleteItem: function deleteItem(item) {
+				$.delete({
+					url: url + "/" + item.id,
+					data: item
+				});
+			}
+		}), _defineProperty(_config2, "fields", fields), _config2);
+		if ($.isPlainObject(config)) {
+			delete config.controller;
+			delete config.fields;
+			$.extend(true, _config, config);
+		}
+		return _config;
+	};
+})(window.jsGrid);
 
 /***/ })
-
-/******/ });
+/******/ ]);
